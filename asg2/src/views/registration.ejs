@@ -1,0 +1,48 @@
+<div class="flex justify-center items-center mt-20">
+    <div class="card w-96 bg-neutral shadow-xl mb-12">
+        <div class="card-body">
+            <h2 class="card-title text-3xl justify-center mb-6">Register</h2>
+            <div class="join join-vertical">
+                
+                <form method="post" accept="/register">
+
+                    <% if(session.error_message) { %>
+                        <small class="text-sm mb-2" style="color:rgb(131, 11, 11)" id="flash-error"> <%-session.error_message-%></small>
+                        <%-session.error_message = null-%>
+                    <% } %>
+                    
+                    <input
+                        type="text"
+                        name="username"
+                        value="<%- session?.attempted_registration_username -%>"
+                        placeholder="Username"
+                        class="input input-bordered w-full max-w-xs mb-10"
+                    />
+
+                    <input
+                        type="email" 
+                        name="email"
+                        value="<%- session?.attempted_registration_email -%>"
+                        placeholder="Email"
+                        class="input input-bordered w-full max-w-xs mb-10" 
+                    />
+
+                    <input
+                        name="password"
+                        type="password" 
+                        placeholder="Password"
+                        class="input input-bordered w-full max-w-xs mb-10"
+                    />
+
+                    <button
+                        type="submit"
+                        class="btn btn-secondary mb-6 w-full">
+                            Register
+                    </button>
+
+                </form>
+            </div>
+            <div>Already have an account? <a href="/login">Login</a></div>
+        </div>
+    </div>
+</div>

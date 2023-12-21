@@ -1,0 +1,42 @@
+<div class="flex justify-center items-center mt-20">
+    <div id="card-wrapper" class="card bg-neutral shadow-xl mb-12">
+        <div class="card-body">
+            <h2 class="card-title text-3xl justify-center mb-6">New Article</h2>
+            <div class="join join-vertical">
+                
+                <form method="post" accept="/articles/new" class="w-full">
+
+                    <input
+                        type="text"
+                        name="title"
+                        value="<%- session?.attempted_article_title -%>"
+                        placeholder="Article Title"
+                        class="input input-bordered w-full mb-10"
+                    />
+
+                    <input
+                        type="text"
+                        name="url"
+                        value="<%- session?.attempted_article_url -%>"
+                        placeholder="Article URL"
+                        class="input input-bordered w-full mb-10" 
+                    />
+
+                    <button
+                        type="submit"
+                        class="btn btn-secondary mb-6 w-full">
+                            Post
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    #card-wrapper {
+        width: 500px;
+    }
+</style>

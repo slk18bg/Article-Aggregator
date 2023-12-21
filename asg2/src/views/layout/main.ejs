@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel" class="font-mono h-screen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Aggregator Homepage</title>
+    <link rel="stylesheet" href="/stylesheets/tailwind/style.css"></style>
+</head>
+<!--min-h-screen-->
+<body class="m-0">
+    <div id="wrapper" class="mx-0 my-auto flex-1 flex-col h-screen">
+        <header class="navbar bg-accent my-0 h-16">
+                <div class="flex-1">
+                    <a href="/" class="btn btn-outline m-2 text-base">Aggregator Home</a>
+                </div>
+                <div class="flex-none">
+                    <ul class="menu menu-horizontal px-1 mx-2">
+                        <% if(session.user_id) { %>
+                            <a href="/articles/new" class="btn btn-success text-md mr-6">New Article</a>
+
+                            <form action="/logout" method="post">
+                                <input type="submit" class="btn btn-secondary text-md" value="Logout">
+                            </form>
+                        <% } else { %>
+                            <a href="/login" class="btn  btn-secondary text-md">Login</a>
+                            <a href="/register" class="btn  btn-secondary text-md ml-6">Register</a>
+                        <% } %>
+                    </ul>
+                </div>
+        </header>
+        <main class="mx-14 p-5 flex-1">
+            <%- body %>
+        </main>
+        <footer class="footer footer-center mt-auto p-6 bg-accent text-lg">
+            <small>Copyright &copy; Sheikh Khaled 2023</small>
+        </footer>
+    </div>
+</body>
+</html>
+
+
+<!-- class="footer footer-center mt-auto p-6 bg-accent text-lg"-->
+
+<!--style="display:flex; flex-direction:row; min-height:100vh;"-->

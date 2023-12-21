@@ -1,0 +1,11 @@
+<div class="align-middle">
+    <h1 class="text-4xl mt-10 text-center"><%- error.statusCode -%> Error 😕</h1>
+
+    <% if(error) { %>
+        <div class="text-center mt-10">Dev env only: <br><%- error -%></div>
+    <% } %>
+
+    <div class="mt-10 grid place-content-center">
+        <button onclick="location.href='/'" class="btn btn-primary">Go Home</button>
+    </div>
+</div>

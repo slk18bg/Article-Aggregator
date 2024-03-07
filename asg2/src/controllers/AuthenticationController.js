@@ -44,7 +44,7 @@ async function processRegistration(req, res, next) {
  * Handles a HTTP POST /login
  */
 async function processLogin(request, response, next) {
-    // TODO handle login request/form submission
+    // handle login request/form submission
     const {email, password} = request.body;
     let validUser = null;
     let validPassword = false;
@@ -73,7 +73,7 @@ async function processLogin(request, response, next) {
 }
 
 function processLogout(request, response) {
-    // TODO: handle logout -> destroy the session, ensure the session cookie is deleted.
+    // handle logout -> destroy the session, ensure the session cookie is deleted
     request.session.destroy()
     response.clearCookie('COMP_3012_Assignment_2')
     response.redirect('/')

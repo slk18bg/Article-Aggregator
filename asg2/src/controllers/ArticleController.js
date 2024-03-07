@@ -2,7 +2,7 @@ const Article = require('../models/Article')
 const createError = require('http-errors');
 
 async function editArticle(request, response, next) {
-    // TODO: render the edit page
+    // render the edit page
     const id = request.params.id;
 
     try{
@@ -22,12 +22,12 @@ async function editArticle(request, response, next) {
 }
 
 function newArticle(request, response, next) {
-    // TODO: render the new article page
+    // render the new article page
     response.render('../views/articles/new', {session: request.session});
 }
 
 async function processNewArticle(request, response, next) {
-    // TODO: save an article to the DB
+    // save an article to the DB
     const {title, url} = request.body;
     try {
         if(request.session.user_id) {
@@ -47,7 +47,7 @@ async function processNewArticle(request, response, next) {
 }
 
 async function processUpdateArticle(request, response, next) {
-    // TODO: update an article in the DB
+    // update an article in the DB
 
     const {title, url} = request.body;
     const id = request.params.id;
@@ -69,7 +69,7 @@ async function processUpdateArticle(request, response, next) {
 }
 
 async function processArticleDeletion(request, response, next) {
-    // TODO: delete an article in the DB
+    // delete an article in the DB
     const id = request.params.id;
 
     try{
